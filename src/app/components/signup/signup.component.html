@@ -1,0 +1,33 @@
+<div class="body">
+    <h2 class="text-center">Sign Up</h2>
+    <form #f="ngForm" (ngSubmit)="signup(f)">
+        <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Your Name" required>
+        <div class="alert alert-danger" *ngIf="name.invalid && name.touched">Name is Required</div>
+
+        <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required
+            email>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email is Required</div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email ">Not Email Format</div>
+
+        <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password"
+            required minlength="6">
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">Password is Required</div>
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength ">Password Shoud br +6
+        </div>
+
+        <input ngModel name="confirmpassword" #confirmpassword="ngModel" type="password" class="form-control"
+            placeholder="Confirm Password" required>
+        <div class="alert alert-danger" *ngIf="confirmpassword.invalid && confirmpassword.touched">Confirm Password is
+            Required</div>
+        <div class="alert alert-danger" *ngIf="confirmpassword.value !== password.value && confirmpassword.touched">
+            Password Not Same</div>
+
+        <input ngModel name="address" #address="ngModel" type="text" class="form-control" placeholder="Address"
+            required>
+        <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Address is Required</div>
+
+        <button class="btn btn-primary" [disabled]="f.invalid || confirmpassword.value !== password.value">Create
+            Account</button>
+    </form>
+    <div class="alert alert-danger" *ngIf="errorMessage"> {{ errorMessage }} </div>
+</div>
