@@ -30,11 +30,13 @@ export class NavbarComponent implements OnInit {
       }
     })
   }
+
   toggleNavbar() {
     this.isOpen = !this.isOpen
-
   }
+
   logout() {
     this.as.logout()
   }
+
 }

@@ -7,7 +7,7 @@
     <td>Options</td>
   </thead>
   <tbody>
-    <tr *ngFor="let good of cart; index as i">
+    <tr *ngFor="let good of cart ;index as i">
       <td>{{good.name | titlecase}}</td>
       <td>{{good.price | currency}}</td>
       <td>
