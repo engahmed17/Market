@@ -10,7 +10,6 @@ import { AuthGuard } from './services/guards/auth.guard';
 import { NotAuthGuard } from './services/guards/not-auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 
-
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { index: 0 } },
   { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard], data: { index: 1 } },

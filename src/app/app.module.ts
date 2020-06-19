@@ -12,7 +12,7 @@ import { NotfoundpageComponent } from './components/notfoundpage/notfoundpage.co
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,7 +48,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireStorageModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {provide: FirestoreSettingsToken, useValue: {}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

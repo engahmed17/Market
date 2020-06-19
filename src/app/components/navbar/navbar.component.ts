@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
         this.isUser = true
         this.as.userId = user.uid
         this.us.getUserData().subscribe(data => {
-          if (data['admin']) this.isAdmin = true;
+          if (this.as['admin']) this.isAdmin = true;
         })
       }
       else {
