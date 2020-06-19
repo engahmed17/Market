@@ -24,5 +24,4 @@ export class GoodsComponent implements OnInit {
       image = (<HTMLInputElement>this.image.nativeElement).files[0];
     this.gs.addNewGood(name, price, image)
   }
-
 }
