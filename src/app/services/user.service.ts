@@ -8,11 +8,11 @@ import { AuthService } from './auth.service';
 export class UserService {
 
   constructor(private fs: AngularFirestore, private as: AuthService) { }
-  addNewUser(id, name, address) {
-    return this.fs.doc('user/' + id).set({
-      name: name,
-      address: address
 
+  addNewUser(id, name, address) {
+    return this.fs.doc('users/' + id).set({
+      name,
+      address
     })
   }
 
@@ -21,4 +21,3 @@ export class UserService {
   }
 
 }
-

@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Good } from 'src/app/interfaces/good.interface';
-import { GoodService } from 'src/app/services/good.service';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { GoodService } from 'src/app/services/good.service';
 
 @Component({
   selector: 'app-home',
@@ -24,27 +24,29 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.goods = data.map(element => {
         return {
           id: element.payload.doc.id,
-          name: element.payload.doc.data()['name'],
-          price: element.payload.doc.data()['price'],
-          photoUrl: element.payload.doc.data()['photoUrl']
+          ...element.payload.doc.data()
         }
       })
     })
   }
+
   ngOnDestroy() {
     this.goodsObservable.unsubscribe()
   }
+
   addToCart(index: number) {
-    if (this.as.userId) this.add = +index;
+    if(this.as.userId) this.add = +index;
     else this.router.navigate(['/login']);
   }
+
   buy(amount: number) {
     let selectedGood = this.goods[this.add]
     let data = {
       name: selectedGood.name,
-      price: selectedGood.price,
-      amount: +amount
+      amount: +amount,
+      price: selectedGood.price
     }
     this.cs.addToCart(data).then(() => this.add = -1)
   }
+
 }

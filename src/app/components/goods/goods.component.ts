@@ -22,7 +22,7 @@ export class GoodsComponent implements OnInit {
     let name = (<Good>form.value).name,
       price = (<Good>form.value).price,
       image = (<HTMLInputElement>this.image.nativeElement).files[0];
-    this.gs.addNewGood(name, price, image)
+    this.gs.addNewGood(name, price, image).then(msg => console.log(msg))
   }
 
 }

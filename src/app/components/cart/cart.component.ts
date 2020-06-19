@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
           id: shopping.payload.doc.id,
           amount: shopping.payload.doc.data()['amount'],
           price: shopping.payload.doc.data()['price'],
-          name: shopping.payload.doc.data()['name']
+          name: shopping.payload.doc.data()['name'],
         }
       })
     })

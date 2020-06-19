@@ -21,8 +21,6 @@ export class LoginComponent implements OnInit {
     this.as.login(data.email, data.password)
       .then(() => this.router.navigate(['/']))
       .catch(err => this.loginError = err.message)
-
-
   }
-}
 
+}
