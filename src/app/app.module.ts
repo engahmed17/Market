@@ -34,14 +34,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     FormsModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyA8Jhurr7H6dPWdJGfD28ewHAmp1SRPIsU",
-      authDomain: "market-3b8f6.firebaseapp.com",
-      databaseURL: "https://market-3b8f6.firebaseio.com",
-      projectId: "market-3b8f6",
-      storageBucket: "market-3b8f6.appspot.com",
-      messagingSenderId: "926851853421",
-      appId: "1:926851853421:web:05c01922697743b9c76364",
-      measurementId: "G-LJFJX4F4HY"
+      apiKey: "AIzaSyAXlYWxbANgdVT-tJY1zQby19ML8qKbX7Q",
+    authDomain: "market-a89fc.firebaseapp.com",
+    databaseURL: "https://market-a89fc.firebaseio.com",
+    projectId: "market-a89fc",
+    storageBucket: "market-a89fc.appspot.com",
+    messagingSenderId: "659625898467",
+    appId: "1:659625898467:web:ae232c718712ec52ba70d6",
+    measurementId: "G-DP5Q5QXXQ0"
     }),
     AngularFirestoreModule,
     AngularFireAuthModule,
